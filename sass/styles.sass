@@ -24,8 +24,14 @@ body
     justify-content: space-between
     @include mixins.container // estou incluindo o mixins container aqui
 
-    @include mixins.mobile
+    @include mixins.small-resolution-mobile
         padding: 1.1rem
+
+    @include mixins.medium-resolution-mobile
+        padding: 2rem
+    
+    @include mixins.large-resolution-mobile
+        padding: 1.2rem
 
     &-brand  // .header-brand
         color: variables.$primary-color
@@ -33,10 +39,12 @@ body
     &-navbar // .header-navbar
         ul
             height: 100%
-            @include mixins.flex-center
             gap: 0 1rem
+            @include mixins.flex-center
 
-            @include mixins.mobile
+            @include mixins.small-resolution-mobile
+                display: none
+            @include mixins.medium-resolution-mobile
                 display: none
 
         li
@@ -54,9 +62,6 @@ body
             height: 100%
             gap: 0 1rem
 
-            @include mixins.mobile
-                display: none
-
             a
                 &:hover
                     color: variables.$primary-color
@@ -65,28 +70,37 @@ body
     @include mixins.flex-center
     @include mixins.container
     flex-wrap: wrap
-    justify-content: space-between
+    // justify-content: space-between
+    gap: 20px
     padding: 0
 
-    @include mixins.mobile
+    @include mixins.small-resolution-mobile
+        flex-direction: column
+
+    @include mixins.medium-resolution-mobile
         flex-direction: column
 
     &-card // .gallery-card
         width: 31%
         height: 400px
-        margin-bottom: 4%
         @include mixins.flex-center
         flex-direction: column
         color: variables.$primary-color
 
-        @include mixins.mobile
+        @include mixins.small-resolution-mobile
             width: 90%
             margin-bottom: 6%
+        @include mixins.medium-resolution-mobile
+            width: 90%
+            margin-bottom: 3%
+        @include mixins.large-resolution-mobile
+            width: 45%
 
         &-title
             font-size: 2rem
             font-weight: 300
             margin-bottom: 1rem
+
         &-btn
             padding: .6rem 2rem
             border: 2px solid variables.$primary-color
@@ -118,8 +132,9 @@ body
         @include mixins.bg-img('refeicoes.jpg')
 
 footer
+    @include mixins.flex-center
     text-align: center
-    padding-bottom: 2rem
+    padding: 2rem
 
     span
         font-weight: bold

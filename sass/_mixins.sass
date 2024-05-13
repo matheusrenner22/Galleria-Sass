@@ -23,6 +23,14 @@
         filter: grayscale(0%)
         background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../img/#{$img}')
 
-@mixin mobile
-    @media(max-width: 425px)
+@mixin small-resolution-mobile
+    @media(min-width: 200px) and (max-width: 429px)
+        @content
+
+@mixin medium-resolution-mobile
+    @media(min-width: 430px) and (max-width: 700px)
+        @content
+
+@mixin large-resolution-mobile
+    @media (min-width: 701px) and (max-width: 1200px)
         @content

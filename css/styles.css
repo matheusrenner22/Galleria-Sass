@@ -25,9 +25,19 @@ body ul {
   padding: 1.5rem 0;
   margin-inline: auto;
 }
-@media (max-width: 425px) {
+@media (min-width: 200px) and (max-width: 429px) {
   .header {
     padding: 1.1rem;
+  }
+}
+@media (min-width: 430px) and (max-width: 700px) {
+  .header {
+    padding: 2rem;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .header {
+    padding: 1.2rem;
   }
 }
 .header-brand {
@@ -36,12 +46,17 @@ body ul {
 }
 .header-navbar ul {
   height: 100%;
+  gap: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0 1rem;
 }
-@media (max-width: 425px) {
+@media (min-width: 200px) and (max-width: 429px) {
+  .header-navbar ul {
+    display: none;
+  }
+}
+@media (min-width: 430px) and (max-width: 700px) {
   .header-navbar ul {
     display: none;
   }
@@ -63,11 +78,6 @@ body ul {
   height: 100%;
   gap: 0 1rem;
 }
-@media (max-width: 425px) {
-  .header-social-media ul {
-    display: none;
-  }
-}
 .header-social-media ul a:hover {
   color: #fff;
 }
@@ -80,10 +90,15 @@ body ul {
   padding: 1.5rem 0;
   margin-inline: auto;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px;
   padding: 0;
 }
-@media (max-width: 425px) {
+@media (min-width: 200px) and (max-width: 429px) {
+  .gallery {
+    flex-direction: column;
+  }
+}
+@media (min-width: 430px) and (max-width: 700px) {
   .gallery {
     flex-direction: column;
   }
@@ -91,17 +106,27 @@ body ul {
 .gallery-card {
   width: 31%;
   height: 400px;
-  margin-bottom: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: #fff;
 }
-@media (max-width: 425px) {
+@media (min-width: 200px) and (max-width: 429px) {
   .gallery-card {
     width: 90%;
     margin-bottom: 6%;
+  }
+}
+@media (min-width: 430px) and (max-width: 700px) {
+  .gallery-card {
+    width: 90%;
+    margin-bottom: 3%;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .gallery-card {
+    width: 45%;
   }
 }
 .gallery-card-title {
@@ -240,8 +265,11 @@ body ul {
 }
 
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 footer span {
   font-weight: bold;
